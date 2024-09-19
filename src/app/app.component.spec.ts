@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ux-goodtime-web' title`, () => {
+  it(`should have the 'angular-material-3' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ux-goodtime-web');
+    expect(app.title).toEqual('angular-material-3');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ux-goodtime-web');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, angular-material-3');
   });
 });

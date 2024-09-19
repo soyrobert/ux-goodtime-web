@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ux-goodtime-web": {
+    "angular-material-3": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ux-goodtime-web",
+            "outputPath": "dist/angular-material-3",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -41,13 +41,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "outputHashing": "all"
@@ -64,16 +64,19 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ux-goodtime-web:build:production"
+              "buildTarget": "angular-material-3:build:production"
             },
             "development": {
-              "buildTarget": "ux-goodtime-web:build:development"
+              "buildTarget": "angular-material-3:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "angular-material-3:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -100,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": "487b085f-54ca-448c-9f1d-d77b697e1385"
+    "analytics": false
   }
 }
