@@ -1,6 +1,7 @@
 @use "@angular/material" as mat;
-@use "../m3-theme";
 @use "./app/layout/layout-component.theme";
+@use "./typography" as typography;
+@use "../m3-theme";
 
 @include mat.core();
 
@@ -63,6 +64,7 @@ $dark-theme: m3-theme.$dark-theme;
   }
 }
 
+
 html,
 body {
   height: 100%;
@@ -71,3 +73,37 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+
+h1 {
+  font-family: map-get(typography.$headline-medium, font);
+  font-size: map-get(typography.$headline-medium, size);
+  letter-spacing: map-get(typography.$headline-medium, tracking);
+  font-weight: map-get(typography.$headline-medium, weight);
+}
+
+h2 {
+  font-family: map-get(typography.$display-large, font);
+  font-size: map-get(typography.$display-large, size);
+  letter-spacing: map-get(typography.$display-large, tracking);
+  font-weight: map-get(typography.$display-large, weight);
+}
+
+h3 {
+  font-family: map-get(typography.$headline-small, font);
+  font-size: map-get(typography.$headline-small, size);
+  letter-spacing: map-get(typography.$headline-small, tracking);
+  font-weight: map-get(typography.$headline-small, weight);
+}
+
+h4 {
+  font-family: map-get(typography.$title-large, font);
+  font-size: map-get(typography.$title-large, size);
+  letter-spacing: map-get(typography.$title-large, tracking);
+  font-weight: map-get(typography.$title-large, weight);
+}
+
+// button.mat-raised-button {
+//   background-color: mat.get-color-from-palette($_palettes, 50); // Aplica el color primary 50
+//   color: mat.get-color-from-palette($_palettes, contrast, 50); // Asegura que el color del texto tenga contraste adecuado
+// }

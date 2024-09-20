@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { LayoutComponent } from './layout/layout.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, LayoutComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [MatButtonModule, MatIconModule], // Importa el módulo de Material para botones
 })
 export class AppComponent {
-  title = 'angular-material-3';
+  title = 'goodtime-web';
 }

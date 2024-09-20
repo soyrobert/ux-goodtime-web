@@ -7,12 +7,12 @@ export const routes: Routes = [
     redirectTo: 'dashboard',
   },
   {
-    path: 'dashboard',
+    path: 'welcome',
     loadComponent: () =>
-      import('./dashboard/dashboard.component').then(
-        (c) => c.DashboardComponent
+      import('./welcome/welcome.component').then(
+        (c) => c.WelcomeComponent
       ),
-      title: 'Dashboard'
+      title: 'Welcome'
   },
   {
     path: 'address',
