@@ -19,3 +19,15 @@
 .dashboard-card-content {
   text-align: center;
 }
+.minutes, .hours {
+    font-size: 1.5em;
+    width: 78px;
+    height: 86px;
+    border: 3px solid #297F80;
+    border-radius: 8px;
+  
+}
+
+.mdc-text-field{
+  border: 0;
+}

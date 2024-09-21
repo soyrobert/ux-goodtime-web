@@ -10,8 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-address-form',
-  templateUrl: './address-form.component.html',
-  styleUrl: './address-form.component.scss',
+  templateUrl: './listar.component.html',
+  styleUrl: './listar.component.scss',
   standalone: true,
   imports: [
     MatInputModule,
@@ -22,7 +22,7 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule
   ]
 })
-export class AddressFormComponent {
+export class ListarComponent {
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
     company: null,

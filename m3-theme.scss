@@ -4,7 +4,6 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
-// Note: Color palettes are generated from primary: #006769, secondary: #55B88A, neutral: #292929
 $_palettes: (
   primary: (
     0: #000000,
@@ -72,7 +71,7 @@ $_palettes: (
     60: #00a0b0,
     70: #22bccf,
     80: #4fd8eb,
-    90: #97f0ff,
+    90: #F2F2F2,
     95: #d0f8ff,
     98: #edfcff,
     99: #f6feff,
@@ -124,6 +123,7 @@ $_rest: (
 );
 $_primary: map.merge(map.get($_palettes, primary), $_rest);
 $_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+$_secondary: map.merge(map.get($_palettes, secondary), $_rest);
 
 $light-theme: mat.define-theme((
   color: (
@@ -132,10 +132,31 @@ $light-theme: mat.define-theme((
     tertiary: $_tertiary,
   )
 ));
+
 $dark-theme: mat.define-theme((
   color: (
-    theme-type: dark,
+    theme-type: light,
     primary: $_primary,
     tertiary: $_tertiary,
   )
 ));
+
+
+@mixin theme($theme) {
+  .mat-raised-button {
+    background-color: mat.get-theme-color($theme, primary);
+    color: mat.get-theme-color($theme, on-primary);
+  }
+}
+
+:root {
+--mdc-text-button-label-text-size: 0.975rem;
+}
+:root .sidenav-scroll-wrapper {
+  background-color:#FFFFFF !important;
+}
+@media (prefers-color-scheme: dark) {
+  :root .sidenav-scroll-wrapper {
+      background-color: #FFFFFF !important;
+  }
+}

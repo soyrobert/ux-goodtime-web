@@ -2,16 +2,16 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableModule, MatTable } from '@angular/material/table';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
-import { TableDataSource, TableItem } from './table-datasource';
+import { TableDataSource, TableItem } from './historial-datasource';
 
 @Component({
   selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrl: './table.component.scss',
+  templateUrl: './historial.component.html',
+  styleUrl: './historial.component.scss',
   standalone: true,
   imports: [MatTableModule, MatPaginatorModule, MatSortModule]
 })
-export class TableComponent implements AfterViewInit {
+export class HistorialComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatTable) table!: MatTable<TableItem>;

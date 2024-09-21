@@ -3,33 +3,34 @@
 @use "./typography" as typography;
 @use "../m3-theme";
 
+
 @include mat.core();
 
-$angular-material-3-light-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    density: (
-      scale: 0,
-    ),
-  )
-);
+// $angular-material-3-light-theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: light,
+//       primary: mat.$azure-palette,
+//       tertiary: mat.$blue-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
 
-$angular-material-3-dark-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: dark,
-      primary: mat.$magenta-palette,
-      tertiary: mat.$violet-palette,
-    ),
-    density: (
-      scale: 0,
-    ),
-  )
-);
+// $angular-material-3-dark-theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: mat.$magenta-palette,
+//       tertiary: mat.$violet-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
 
 // Light theme
 // Un comment below to use theme created by ng add @angular-material
@@ -103,7 +104,19 @@ h4 {
   font-weight: map-get(typography.$title-large, weight);
 }
 
-// button.mat-raised-button {
-//   background-color: mat.get-color-from-palette($_palettes, 50); // Aplica el color primary 50
-//   color: mat.get-color-from-palette($_palettes, contrast, 50); // Asegura que el color del texto tenga contraste adecuado
-// }
+
+// Override Theme 
+
+:root {
+  --mdc-text-button-label-text-size: 0.975rem;
+  // Background color item sidenav
+  --mat-list-active-indicator-color: #297F80;
+  // Text color item sidenav
+  --mdc-list-list-item-label-text-color: #F2F2F2;
+
+  // Text color button
+  --mdc-protected-button-label-text-color: #F2F2F2;
+
+  // Background color button
+  --mdc-protected-button-container-color: #297F80;
+}

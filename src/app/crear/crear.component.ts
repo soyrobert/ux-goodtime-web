@@ -7,11 +7,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  templateUrl: './crear.component.html',
+  styleUrl: './crear.component.scss',
   standalone: true,
   imports: [
     AsyncPipe,
@@ -19,10 +25,16 @@ import { MatCardModule } from '@angular/material/card';
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    FormsModule
   ]
 })
-export class DashboardComponent {
+export class CrearComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
   /** Based on the screen size, switch from standard to one column per row */
@@ -45,4 +57,11 @@ export class DashboardComponent {
       ];
     })
   );
+hour: any;
+minute: any;
+timeFormat: any;
+alarmName: any;
+days: any;
+selectedImageUrl: any;
+description: any;
 }

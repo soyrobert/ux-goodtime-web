@@ -3,7 +3,7 @@ import { MatTreeModule, MatTreeFlatDataSource, MatTreeFlattener } from '@angular
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { files } from './example-data';
+import { files } from './estadisticas-data';
 
 /** File node data with possible child nodes. */
 export interface FileNode {
@@ -25,12 +25,12 @@ export interface FlatTreeNode {
 
 @Component({
   selector: 'app-tree',
-  templateUrl: './tree.component.html',
-  styleUrl: './tree.component.scss',
+  templateUrl: './estadisticas.component.html',
+  styleUrl: './estadisticas.component.scss',
   standalone: true,
   imports: [MatTreeModule, MatButtonModule, MatIconModule]
 })
-export class TreeComponent {
+export class EstadisticasComponent {
 
   /** The TreeControl controls the expand/collapse state of tree nodes.  */
   treeControl: FlatTreeControl<FlatTreeNode>;
