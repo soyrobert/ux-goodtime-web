@@ -1,27 +1,61 @@
-.full-width {
+.alarms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  max-width: 100%;
+}
+
+.alarm-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  background-color: #69CB9C;
+  border-radius: 12px;
+  min-height: 150px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alarm-content {
+  display: flex;
+  align-items: center;
   width: 100%;
 }
 
-.shipping-card {
-  min-width: 120px;
-  margin: 20px auto;
+.alarm-image {
+  width: 223px;
+  height: 154px;
+  object-fit: cover;
+  border-radius: 12px 0 0 12px;
+  margin-right: 15px;
 }
 
-.mat-radio-button {
-  display: block;
-  margin: 5px 0;
+.alarm-info {
+  flex-grow: 1;
 }
 
-.row {
+.alarm-info h3 {
+  margin: 0;
+  color: #014344;
+}
+
+.alarm-info p {
+  margin: 5px 0 0;
+  color: #014344;
+}
+
+.alarm-actions {
   display: flex;
-  flex-direction: row;
+  gap: 30px;
+  padding-right: 40px;
+  button{
+    background-color: #008587;
+    mat-icon{
+      color: #F2F2F2;
+    }
+    
+  }
 }
 
-.col {
-  flex: 1;
-  margin-right: 20px;
-}
 
-.col:last-child {
-  margin-right: 0;
-}
