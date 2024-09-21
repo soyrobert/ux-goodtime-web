@@ -73,6 +73,9 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  p{
+    font-size: 13px;
+  }
 }
 
 
@@ -104,6 +107,50 @@ h4 {
   font-weight: map-get(typography.$title-large, weight);
 }
 
+.goodtime-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0% 5rem;
+}
+.goodtime-crear{
+  p{
+    margin-top: -5px;
+  }
+}
+
+// Inputs
+.time-inputs{
+  .mat-mdc-text-field-wrapper{
+    width: 81px;
+    height: 86px;
+    border: 3px solid #297F80;
+    border-radius: 8px;
+  }
+}
+.name, .description{
+  width: 100%;
+  .mat-mdc-text-field-wrapper{
+    width: 100%;
+    border: 3px solid #297F80;
+    border-radius: 8px;
+  }
+}
+.time-apm{
+  display: flex;
+}
+
+.mdc-notched-outline--notched mat-label{
+  background-color: #55B88A;
+  border-radius: 8px;
+  color: #014344;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0px 4px;
+  align-items: center;
+}
+
+
 
 // Override Theme 
 
@@ -119,4 +166,31 @@ h4 {
 
   // Background color button
   --mdc-protected-button-container-color: #297F80;
+
+  // Checkbox 
+  --mdc-checkbox-selected-focus-icon-color: #297F80;
+  --mdc-checkbox-selected-hover-icon-color: #297F80;
+  --mdc-checkbox-selected-icon-color: #297F80;
+  --mdc-checkbox-selected-pressed-icon-color: #297F80;
+  --mdc-checkbox-selected-focus-state-layer-color: #297F80;
+  --mdc-checkbox-selected-hover-state-layer-color: #297F80;
+  --mdc-checkbox-unselected-pressed-state-layer-color: #297F80;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root .mat-accent.mat-mdc-checkbox {
+    --mdc-checkbox-selected-focus-icon-color: #297F80;
+    --mdc-checkbox-selected-hover-icon-color: #297F80;
+    --mdc-checkbox-selected-icon-color: #297F80;
+    --mdc-checkbox-selected-pressed-icon-color: #297F80;
+    --mdc-checkbox-selected-focus-state-layer-color: #297F80;
+    --mdc-checkbox-selected-hover-state-layer-color: #297F80;
+    --mdc-checkbox-unselected-pressed-state-layer-color: #297F80;
+    --mdc-checkbox-unselected-icon-color: #297F80;
+  }
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+  width: 20px;
+  height: 20px;
 }

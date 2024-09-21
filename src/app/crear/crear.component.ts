@@ -35,6 +35,23 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class CrearComponent {
+onSubmit() {
+throw new Error('Method not implemented.');
+}
+imageUrl: any;
+alarmForm: any;
+onFileSelected($event: Event) {
+throw new Error('Method not implemented.');
+}
+saveAlarm() {
+throw new Error('Method not implemented.');
+}
+goBack() {
+throw new Error('Method not implemented.');
+}
+selectImage() {
+throw new Error('Method not implemented.');
+}
   private breakpointObserver = inject(BreakpointObserver);
 
   /** Based on the screen size, switch from standard to one column per row */
@@ -61,7 +78,16 @@ hour: any;
 minute: any;
 timeFormat: any;
 alarmName: any;
-days: any;
+days: { lu: boolean, ma: boolean, mi: boolean, ju: boolean, vi: boolean, sa: boolean, do: boolean } = {
+  lu: false,
+  ma: false,
+  mi: false,
+  ju: false,
+  vi: false,
+  sa: false,
+  do: false
+};
+
 selectedImageUrl: any;
 description: any;
 }
