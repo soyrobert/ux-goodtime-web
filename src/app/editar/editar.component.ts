@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { AsyncPipe } from '@angular/common';
@@ -35,23 +35,26 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class EditarComponent {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
-imageUrl: any;
-alarmForm: any;
-onFileSelected($event: Event) {
-throw new Error('Method not implemented.');
-}
-saveAlarm() {
-throw new Error('Method not implemented.');
-}
-goBack() {
-throw new Error('Method not implemented.');
-}
-selectImage() {
-throw new Error('Method not implemented.');
-}
+  
+  @Input() title: string = 'Editar alarma';
+  
+  onSubmit() {
+  throw new Error('Method not implemented.');
+  }
+  imageUrl: any;
+  alarmForm: any;
+  onFileSelected($event: Event) {
+  throw new Error('Method not implemented.');
+  }
+  saveAlarm() {
+  throw new Error('Method not implemented.');
+  }
+  goBack() {
+  throw new Error('Method not implemented.');
+  }
+  selectImage() {
+  throw new Error('Method not implemented.');
+  }
   private breakpointObserver = inject(BreakpointObserver);
 
   /** Based on the screen size, switch from standard to one column per row */

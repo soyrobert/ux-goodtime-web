@@ -112,6 +112,13 @@ h4 {
   flex-direction: column;
   justify-content: space-between;
   margin: 0% 5rem;
+  h1{
+    color: #014344;  
+    background-color: #F2F2F2;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+  }
 }
 .goodtime-crear, .goodtime-editar{
   p{

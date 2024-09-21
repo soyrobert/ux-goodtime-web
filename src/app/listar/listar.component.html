@@ -1,22 +1,25 @@
-<div class="alarms-list">
-  <mat-card class="alarm-card" *ngFor="let alarm of alarms">
-    <div class="alarm-content">
-      <img [src]="alarm.image" alt="Alarm image" class="alarm-image" />
-      <div class="alarm-info">
-        <h3>{{ alarm.title }}</h3>
-        <p>{{ alarm.time }}</p>
+<div class="goodtime-container goodtime-listado">
+  <h1>{{ title }}</h1>
+  <div class="alarms-list">
+    <mat-card class="alarm-card" *ngFor="let alarm of alarms">
+      <div class="alarm-content">
+        <img [src]="alarm.image" alt="Alarm image" class="alarm-image" />
+        <div class="alarm-info">
+          <h3>{{ alarm.title }}</h3>
+          <p>{{ alarm.time }}</p>
+        </div>
+        <div class="alarm-actions">
+          <button mat-icon-button color="primary" (click)="shareAlarm(alarm)">
+            <mat-icon>share</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="editAlarm(alarm)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="primary" (click)="deleteAlarm(alarm)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
       </div>
-      <div class="alarm-actions">
-        <button mat-icon-button color="primary" (click)="shareAlarm(alarm)">
-          <mat-icon>share</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" (click)="editAlarm(alarm)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-icon-button color="primary" (click)="deleteAlarm(alarm)">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </div>
-  </mat-card>
+    </mat-card>
+  </div>
 </div>

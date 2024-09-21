@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
 import { AsyncPipe } from '@angular/common';
@@ -15,9 +15,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-crear',
   templateUrl: './crear.component.html',
-  styleUrl: './crear.component.scss',
+  styleUrls: ['./crear.component.scss'],
   standalone: true,
   imports: [
     AsyncPipe,
@@ -35,59 +35,33 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class CrearComponent {
-onSubmit() {
-throw new Error('Method not implemented.');
-}
-imageUrl: any;
-alarmForm: any;
-onFileSelected($event: Event) {
-throw new Error('Method not implemented.');
-}
-saveAlarm() {
-throw new Error('Method not implemented.');
-}
-goBack() {
-throw new Error('Method not implemented.');
-}
-selectImage() {
-throw new Error('Method not implemented.');
-}
-  private breakpointObserver = inject(BreakpointObserver);
+  @Input() title: string = 'Agregar nueva alarma';
 
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+  hour: any;
+  minute: any;
+  timeFormat: any;
+  alarmName: any;
+  description: any;
+  days = {
+    lu: false,
+    ma: false,
+    mi: false,
+    ju: false,
+    vi: false,
+    sa: false,
+    do: false,
+  };
+  selectedImageUrl: any;
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
-hour: any;
-minute: any;
-timeFormat: any;
-alarmName: any;
-days: { lu: boolean, ma: boolean, mi: boolean, ju: boolean, vi: boolean, sa: boolean, do: boolean } = {
-  lu: false,
-  ma: false,
-  mi: false,
-  ju: false,
-  vi: false,
-  sa: false,
-  do: false
-};
+  saveAlarm() {
+    console.log('Alarm saved!');
+  }
 
-selectedImageUrl: any;
-description: any;
+  goBack() {
+    console.log('Back button clicked!');
+  }
+
+  selectImage() {
+    console.log('Image selected!');
+  }
 }
