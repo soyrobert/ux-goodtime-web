@@ -175,7 +175,7 @@ h4 {
   position: fixed !important;
   top: 50% !important;
   left: 50% !important;
-   transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%) !important;
 
   .mdc-snackbar__label{
     color: $neutral-90 !important;
@@ -187,8 +187,13 @@ h4 {
 .mat-mdc-snack-bar-container .mdc-snackbar__surface {
   box-shadow: none !important;
 }
-
-
+.mat-mdc-list-item-unscoped-content{
+  display: flex;
+  justify-content: flex-start;
+  mat-icon{
+      margin-right: 10px;
+  }
+}
 
 // Override Theme 
 
@@ -215,6 +220,9 @@ h4 {
   --mdc-checkbox-unselected-pressed-state-layer-color: #006769;
 
   --mdc-snackbar-container-color: #006769;
+
+  // Altura item de navegacion
+  --mdc-list-list-item-one-line-container-height: 58px
 }
 
 @media (prefers-color-scheme: dark) {

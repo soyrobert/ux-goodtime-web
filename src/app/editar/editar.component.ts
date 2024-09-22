@@ -68,7 +68,7 @@ export class EditarComponent implements OnInit {
       });
   
       setTimeout(() => {
-        this.router.navigate(['/listar']);
+        this.router.navigate(['/listado']);
       }, 2700);
     } else {
       console.log('Form is not valid');

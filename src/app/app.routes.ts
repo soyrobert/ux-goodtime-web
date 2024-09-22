@@ -15,7 +15,7 @@ export const routes: Routes = [
     title: 'Crear alarma'
   },
   {
-    path: 'listar',
+    path: 'listado',
     loadComponent: () =>
       import('./listar/listar.component').then(
         (c) => c.ListarComponent
