@@ -1,96 +1,86 @@
-import { Component, inject, Input } from '@angular/core';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
-import { AsyncPipe } from '@angular/common';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-editar',
   templateUrl: './editar.component.html',
-  styleUrl: './editar.component.scss',
+  styleUrls: ['./editar.component.scss'],
   standalone: true,
   imports: [
-    AsyncPipe,
-    MatGridListModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
+    CommonModule,
     MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
     MatRadioModule,
+    MatCardModule,
+    MatIconModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
-    FormsModule
+    MatSnackBarModule,
   ]
 })
-export class EditarComponent {
-  
+export class EditarComponent implements OnInit {
+  editAlarmForm!: FormGroup;
   @Input() title: string = 'Editar alarma';
+  selectedImageUrl: any;
+
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private router: Router) {}
+
+  ngOnInit(): void {
+    this.editAlarmForm = this.fb.group({
+      hour: ['07', Validators.required],
+      minute: ['30', Validators.required],
+      alarmName: ['Despertar', [Validators.required, Validators.minLength(3)]],
+      description: ['Alarma para despertar por la mañana', Validators.required],
+      timeFormat: ['AM', Validators.required],
+      days: this.fb.group({
+        lu: [true],
+        ma: [true],
+        mi: [false],
+        ju: [true],
+        vi: [true],
+        sa: [false],
+        do: [false],
+      })
+    });
+  }
+
+  saveAlarm(): void {
+    if (this.editAlarmForm.valid) {
+      console.log('Alarm data:', this.editAlarmForm.value);
   
-  onSubmit() {
-  throw new Error('Method not implemented.');
+      this.snackBar.open('Alarma actualizada', '', {
+        duration: 2500,
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+        panelClass: ['custom-snackbar']
+      });
+  
+      setTimeout(() => {
+        this.router.navigate(['/listar']);
+      }, 2700);
+    } else {
+      console.log('Form is not valid');
+    }
   }
-  imageUrl: any;
-  alarmForm: any;
-  onFileSelected($event: Event) {
-  throw new Error('Method not implemented.');
-  }
-  saveAlarm() {
-  throw new Error('Method not implemented.');
-  }
-  goBack() {
-  throw new Error('Method not implemented.');
-  }
-  selectImage() {
-  throw new Error('Method not implemented.');
-  }
-  private breakpointObserver = inject(BreakpointObserver);
+  
 
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
+  goBack(): void {
+    // Lógica para regresar
+  }
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
-hour: any;
-minute: any;
-timeFormat: any;
-alarmName: any;
-days: { lu: boolean, ma: boolean, mi: boolean, ju: boolean, vi: boolean, sa: boolean, do: boolean } = {
-  lu: false,
-  ma: false,
-  mi: false,
-  ju: false,
-  vi: false,
-  sa: false,
-  do: false
-};
-
-selectedImageUrl: any;
-description: any;
+  selectImage(): void {
+    // Lógica para seleccionar una imagen
+  }
 }

@@ -78,6 +78,11 @@ body {
   }
 }
 
+$primary-50: #006769;
+$primary-30: #014344;
+$secondary-60: #55B88A;
+$neutral-90: #F2F2F2;
+
 
 h1 {
   font-family: map-get(typography.$headline-medium, font);
@@ -114,7 +119,7 @@ h4 {
   margin: 0% 5rem;
   h1{
     color: #014344;  
-    background-color: #F2F2F2;
+    background-color: $neutral-90;
     padding: 10px 15px;
     border-radius: 12px;
     margin-bottom: 35px;
@@ -131,7 +136,7 @@ h4 {
   .mat-mdc-text-field-wrapper{
     width: 81px;
     height: 86px;
-    border: 3px solid #297F80;
+    border: 3px solid $primary-50;
     border-radius: 8px;
   }
 }
@@ -139,7 +144,7 @@ h4 {
   width: 100%;
   .mat-mdc-text-field-wrapper{
     width: 100%;
-    border: 3px solid #297F80;
+    border: 3px solid $primary-50;
     border-radius: 8px;
   }
 }
@@ -157,6 +162,32 @@ h4 {
   align-items: center;
 }
 
+.mdc-snackbar{
+  width: 450px;
+  border-radius: 8px;
+  height: 150px;
+  background-color: $primary-50;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+   transform: translate(-50%, -50%) !important;
+
+  .mdc-snackbar__label{
+    color: $neutral-90 !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  box-shadow: none !important;
+}
+
 
 
 // Override Theme 
@@ -164,7 +195,7 @@ h4 {
 :root {
   --mdc-text-button-label-text-size: 0.975rem;
   // Background color item sidenav
-  --mat-list-active-indicator-color: #297F80;
+  --mat-list-active-indicator-color: #006769;
   // Text color item sidenav
   --mdc-list-list-item-label-text-color: #F2F2F2;
 
@@ -172,28 +203,30 @@ h4 {
   --mdc-protected-button-label-text-color: #F2F2F2;
 
   // Background color button
-  --mdc-protected-button-container-color: #297F80;
+  --mdc-protected-button-container-color: #006769;
 
   // Checkbox 
-  --mdc-checkbox-selected-focus-icon-color: #297F80;
-  --mdc-checkbox-selected-hover-icon-color: #297F80;
-  --mdc-checkbox-selected-icon-color: #297F80;
-  --mdc-checkbox-selected-pressed-icon-color: #297F80;
-  --mdc-checkbox-selected-focus-state-layer-color: #297F80;
-  --mdc-checkbox-selected-hover-state-layer-color: #297F80;
-  --mdc-checkbox-unselected-pressed-state-layer-color: #297F80;
+  --mdc-checkbox-selected-focus-icon-color: #006769;
+  --mdc-checkbox-selected-hover-icon-color: #006769;
+  --mdc-checkbox-selected-icon-color: #006769;
+  --mdc-checkbox-selected-pressed-icon-color: #006769;
+  --mdc-checkbox-selected-focus-state-layer-color: #006769;
+  --mdc-checkbox-selected-hover-state-layer-color: #006769;
+  --mdc-checkbox-unselected-pressed-state-layer-color: #006769;
+
+  --mdc-snackbar-container-color: #006769;
 }
 
 @media (prefers-color-scheme: dark) {
   :root .mat-accent.mat-mdc-checkbox {
-    --mdc-checkbox-selected-focus-icon-color: #297F80;
-    --mdc-checkbox-selected-hover-icon-color: #297F80;
-    --mdc-checkbox-selected-icon-color: #297F80;
-    --mdc-checkbox-selected-pressed-icon-color: #297F80;
-    --mdc-checkbox-selected-focus-state-layer-color: #297F80;
-    --mdc-checkbox-selected-hover-state-layer-color: #297F80;
-    --mdc-checkbox-unselected-pressed-state-layer-color: #297F80;
-    --mdc-checkbox-unselected-icon-color: #297F80;
+    --mdc-checkbox-selected-focus-icon-color: #006769;
+    --mdc-checkbox-selected-hover-icon-color: #006769;
+    --mdc-checkbox-selected-icon-color: #006769;
+    --mdc-checkbox-selected-pressed-icon-color: #006769;
+    --mdc-checkbox-selected-focus-state-layer-color: #006769;
+    --mdc-checkbox-selected-hover-state-layer-color: #006769;
+    --mdc-checkbox-unselected-pressed-state-layer-color: #006769;
+    --mdc-checkbox-unselected-icon-color: #006769;
   }
 }
 

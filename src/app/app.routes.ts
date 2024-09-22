@@ -23,6 +23,14 @@ export const routes: Routes = [
     title: 'Listado de alarmas'
   },
   {
+    path: 'editar/:id',
+    loadComponent: () =>
+      import('./editar/editar.component').then(
+        (c) => c.EditarComponent
+      ),
+    title: 'Editar alarma'
+  },
+  {
     path: 'historial',
     loadComponent: () =>
       import('./historial/table.component').then(
