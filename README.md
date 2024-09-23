@@ -1,27 +1,84 @@
-# AngularMaterial3
+# GoodTime
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.4.
+Proyecto de alarmas. 
+Este proyecto fue generado con Angular CLI versión 18.0.0-next.4.
 
-## Development server
+## Authors
+* Robert Castro
+* Jhon Puentes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pre-requisitos para ejecutar esta web app
+### Paso 1: Instalar Node.js y npm
+Angular requiere Node.js y npm para funcionar. npm (Node Package Manager) se instala automáticamente con Node.js.
 
-## Code scaffolding
+* Descargar Node.js:
+    Ve a la página oficial de Node.js.
+    Descarga la versión LTS (Long Term Support) recomendada.
+    Sigue las instrucciones para instalarlo en tu sistema operativo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Verificar la instalación:
+    Abre una terminal (CMD, PowerShell, Terminal en Mac/Linux).
+    Ejecuta los siguientes comandos para asegurarte de que Node.js y npm están instalados correctamente:
 
-## Build
+    ```bash
+    node -v
+    npm -v
+    ```
+    Deberías ver las versiones instaladas de ambos programas. Si ves números, significa que la instalación fue exitosa.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Paso 2: Instalar Angular CLI
+La CLI (Command Line Interface) de Angular te ayuda a crear proyectos, generar código y ejecutar aplicaciones Angular.
+* Instalar Angular CLI:
+    En la terminal, ejecuta el siguiente comando para instalar Angular CLI globalmente:
 
-## Running unit tests
+    ```bash
+    npm install -g @angular/cli
+    ```
+* Verificar la instalación:
+    Una vez instalada, verifica la versión de Angular CLI con este comando:
+    ```bash
+    ng version
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Paso 3: Instalar Git
+Git es necesario para gestionar el control de versiones de tu proyecto.
 
-## Running end-to-end tests
+* Descargar Git:
+    Ve a la página oficial de Git.
+    Descarga e instala la versión más reciente.
+* Verificar la instalación:
+    En la terminal, ejecuta el siguiente comando para verificar que Git se instaló correctamente:
+    ```bash
+    git --version
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Deberías ver la versión de Git instalada.
 
-## Further help
+## Ejecutar esta web app
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Paso 1: Abrir su IDE favorito
+Recomendado: Visual Studio Code o WebStorm
+
+### Paso 2: ejecutar
+Para iniciar el servidor de desarrollo y ver tu aplicación Angular en el navegador, ejecuta:
+
+
+```bash
+npm install
+```
+
+luego:
+```bash
+ng build
+```
+
+luego:
+```bash
+ng serve
+```
+o
+```bash
+sudo ng serve
+```
+
+luego de esto, abra su navegador y acceda a: `http://localhost:4200/`
