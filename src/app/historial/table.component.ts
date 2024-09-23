@@ -55,8 +55,16 @@ export class HistorialComponent {
     }
   ];
   
-  deleteHistory(alarm: any): void {
-    alert(`Eliminando historial: ${alarm.title}`);
+  deleteHistory(): void {
+    alert(`Eliminando historial...`);
+  }
+
+  deleteAlarm(alarm: any): void {
+    alert(`Eliminando alarma del historial: ${alarm.title}`);
+  }
+
+  back(): void {
+    this.router.navigate(['/crear']);
   }
 
 }

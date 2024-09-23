@@ -44,6 +44,14 @@
   color: #014344;
 }
 
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
 .alarm-actions {
   display: flex;
   gap: 30px;
@@ -61,6 +69,11 @@
     mat-icon {
       color: #F2F2F2 !important;
     }
+  }
+
+  button.back-button {
+    background-color: #55B88A !important;
+    color: white !important;
   }
 
 }
