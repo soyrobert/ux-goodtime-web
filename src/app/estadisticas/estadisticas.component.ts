@@ -1,85 +1,156 @@
-import { Component } from '@angular/core';
-import { MatTreeModule, MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
-import { FlatTreeControl } from '@angular/cdk/tree';
-import { MatButtonModule } from '@angular/material/button';
+import { Component, OnInit } from '@angular/core';
+import * as d3 from 'd3';
+import { Router } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import { files } from './estadisticas-data';
+import { MatButtonModule } from '@angular/material/button';
+import { NgFor } from '@angular/common';
 
-/** File node data with possible child nodes. */
-export interface FileNode {
-  name: string;
-  type: string;
-  children?: FileNode[];
-}
-
-/**
- * Flattened tree node that has been created from a FileNode through the flattener. Flattened
- * nodes include level index and whether they can be expanded or not.
- */
-export interface FlatTreeNode {
-  name: string;
-  type: string;
-  level: number;
-  expandable: boolean;
-}
 
 @Component({
   selector: 'app-tree',
   templateUrl: './estadisticas.component.html',
   styleUrl: './estadisticas.component.scss',
   standalone: true,
-  imports: [MatTreeModule, MatButtonModule, MatIconModule]
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    NgFor
+  ]
 })
-export class EstadisticasComponent {
+export class EstadisticasComponent implements OnInit {
+  
+  private svg: any;
+  private margin = 50;
+  private width = 750 - (this.margin * 2);
+  private height = 400 - (this.margin * 2);
 
-  /** The TreeControl controls the expand/collapse state of tree nodes.  */
-  treeControl: FlatTreeControl<FlatTreeNode>;
+  constructor(private router: Router) { }
 
-  /** The TreeFlattener is used to generate the flat list of items from hierarchical data. */
-  treeFlattener: MatTreeFlattener<FileNode, FlatTreeNode>;
+  ngOnInit(): void {
+    this.createSvg();
+    this.drawBars(this.data);
 
-  /** The MatTreeFlatDataSource connects the control and flattener to provide data. */
-  dataSource: MatTreeFlatDataSource<FileNode, FlatTreeNode>;
-
-  constructor() {
-    this.treeFlattener = new MatTreeFlattener(
-      this.transformer,
-      this.getLevel,
-      this.isExpandable,
-      this.getChildren);
-
-    this.treeControl = new FlatTreeControl(this.getLevel, this.isExpandable);
-    this.dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-    this.dataSource.data = files;
+    this.createSvgv2();
+    this.drawChart(this.data);
   }
 
-  /** Transform the data to something the tree can read. */
-  transformer(node: FileNode, level: number): FlatTreeNode {
-    return {
-      name: node.name,
-      type: node.type,
-      level,
-      expandable: !!node.children
-    };
+  private data = [
+    { month: 'Ene', value: 30 },
+    { month: 'Feb', value: 50 },
+    { month: 'Mar', value: 40 },
+    { month: 'Abr', value: 60 },
+    { month: 'May', value: 70 },
+    { month: 'Jun', value: 50 }
+  ];
+
+  private createSvg(): void {
+    this.svg = d3.select("figure#bar")
+      .append("svg")
+      .attr("width", this.width + (this.margin * 2))
+      .attr("height", this.height + (this.margin * 2))
+      .append("g")
+      .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
   }
 
-  /** Get the level of the node */
-  getLevel(node: FlatTreeNode): number {
-    return node.level;
+  private drawBars(data: any[]): void {
+    // Crear el eje X
+    const x = d3.scaleBand()
+      .range([0, this.width])
+      .domain(data.map(d => d.month))
+      .padding(0.2);
+
+    this.svg.append("g")
+      .attr("transform", "translate(0," + this.height + ")")
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end");
+
+    // Crear el eje Y
+    const y = d3.scaleLinear()
+      .domain([0, 100])
+      .range([this.height, 0]);
+
+    this.svg.append("g")
+      .call(d3.axisLeft(y));
+
+    // Crear las barras
+    this.svg.selectAll("bars")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", (d: any) => x(d.month))
+      .attr("y", (d: any) => y(d.value))
+      .attr("width", x.bandwidth())
+      .attr("height", (d: any) => this.height - y(d.value))
+      .attr("fill", "#69b3a2");
   }
 
-  /** Get whether the node is expanded or not. */
-  isExpandable(node: FlatTreeNode): boolean {
-    return node.expandable;
+
+  private createSvgv2(): void {
+    this.svg = d3.select("figure#line")
+      .append("svg")
+      .attr("width", this.width + (this.margin * 2))
+      .attr("height", this.height + (this.margin * 2))
+      .append("g")
+      .attr("transform", "translate(" + this.margin + "," + this.margin + ")");
   }
 
-  /** Get whether the node has children or not. */
-  hasChild(index: number, node: FlatTreeNode): boolean {
-    return node.expandable;
+  private drawChart(data: any[]): void {
+    // Crear el eje X
+    const x = d3.scaleBand()
+      .range([0, this.width])
+      .domain(data.map(d => d.month))
+      .padding(0.2);
+
+    this.svg.append("g")
+      .attr("transform", "translate(0," + this.height + ")")
+      .call(d3.axisBottom(x))
+      .selectAll("text")
+      .attr("transform", "translate(-10,0)rotate(-45)")
+      .style("text-anchor", "end");
+
+    // Crear el eje Y
+    const y = d3.scaleLinear()
+      .domain([0, 100])
+      .range([this.height, 0]);
+
+    this.svg.append("g")
+      .call(d3.axisLeft(y));
+
+    // Crear la línea
+    const line = d3.line()
+      .x((d: any) => x(d.month)! + x.bandwidth() / 2)
+      .y((d: any) => y(d.value));
+
+    this.svg.append("path")
+      .datum(data)
+      .attr("fill", "none")
+      .attr("stroke", "#69b3a2")
+      .attr("stroke-width", 2)
+      .attr("d", line);
+
+    // Añadir puntos
+    this.svg.selectAll("dot")
+      .data(data)
+      .enter()
+      .append("circle")
+      .attr("cx", (d: any) => x(d.month)! + x.bandwidth() / 2)
+      .attr("cy", (d: any) => y(d.value))
+      .attr("r", 5)
+      .attr("fill", "#69b3a2");
   }
 
-  /** Get the children for the node. */
-  getChildren(node: FileNode): FileNode[] | null | undefined {
-    return node.children;
+    
+  reset(): void {
+    alert(`Reiniciando estadísticas...`);
   }
+
+
+  back(): void {
+    this.router.navigate(['/listado']);
+  }
+
 }
