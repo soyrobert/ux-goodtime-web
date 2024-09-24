@@ -57,7 +57,7 @@ export class ListarComponent {
 
   // Métodos para manejar las acciones de los botones (compartir, editar, eliminar)
   shareAlarm(alarm: any): void {
-    alert(`Compartiendo alarma: ${alarm.title}`);
+    this.router.navigate(['/compartir-alarma']);
   }
 
   editAlarm(alarm: any): void {

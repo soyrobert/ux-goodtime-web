@@ -46,5 +46,13 @@ export const routes: Routes = [
       ),
     title: 'Estadisticas'
   },
+  {
+    path: 'compartir-alarma',
+    loadComponent: () =>
+      import('./share-alarm/share-alarm.component').then(
+        (c) => c.ShareAlarmComponent
+      ),
+    title: 'Compartir Alarma'
+  },
 
 ];

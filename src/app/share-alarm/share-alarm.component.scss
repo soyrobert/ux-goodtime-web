@@ -1,0 +1,37 @@
+.share-alarm-container {
+    background-color: #004c46;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+  }
+  
+  mat-icon {
+    margin-right: 15px;
+  }
+  
+  .exit-button {
+    background-color: white;
+    color: #004c46;
+    margin-top: 20px;
+  }
+  
