@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-around; /* Espacio equitativo */
   align-items: flex-start; /* Alinea en la parte superior */
-  gap: 20px; /* Espacio entre las gráficas */
-  max-width: 100%; /* Asegura que no exceda el ancho de la pantalla */
+  gap: 80px; /* Espacio entre las gráficas */
+  max-width: 80%; /* Asegura que no exceda el ancho de la pantalla */
   overflow-x: hidden; /* Evita el scroll horizontal */
   flex-wrap: wrap; /* Permite que las gráficas bajen de línea si es necesario */
 }

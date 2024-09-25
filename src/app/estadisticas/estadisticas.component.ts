@@ -23,8 +23,8 @@ export class EstadisticasComponent implements OnInit {
   
   private svg: any;
   private margin = 50;
-  private width = 750 - (this.margin * 2);
-  private height = 400 - (this.margin * 2);
+  private width = 700 - (this.margin * 2);
+  private height = 350 - (this.margin * 2);
 
   constructor(private router: Router) { }
 
