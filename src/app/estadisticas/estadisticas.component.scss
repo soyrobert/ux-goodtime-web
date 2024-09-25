@@ -138,3 +138,26 @@ figcaption {
 
 }
 
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 10px;
+  gap: 40px;
+}
+
+.second-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; 
+}
