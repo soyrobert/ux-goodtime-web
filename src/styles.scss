@@ -136,16 +136,16 @@ h4 {
   .mat-mdc-text-field-wrapper{
     width: 81px;
     height: 86px;
-    border: 3px solid $primary-50;
-    border-radius: 8px;
+    // border: 3px solid $primary-50;
+    // border-radius: 8px;
   }
 }
 .name, .description{
   width: 100%;
   .mat-mdc-text-field-wrapper{
     width: 100%;
-    border: 3px solid $primary-50;
-    border-radius: 8px;
+    // border: 3px solid $primary-50;
+    // border-radius: 8px;
   }
 }
 .time-apm{
@@ -222,7 +222,20 @@ h4 {
   --mdc-snackbar-container-color: #006769;
 
   // Altura item de navegacion
-  --mdc-list-list-item-one-line-container-height: 58px
+  --mdc-list-list-item-one-line-container-height: 58px;
+
+  // Color radio
+  --mdc-radio-unselected-icon-color: #006769;
+
+  // Textos descripcion inputs
+  --mat-form-field-subscript-text-weight: 500;
+
+  // Border inputs
+  --mdc-outlined-text-field-outline-width: 3px;
+  --mdc-outlined-text-field-error-outline-color: #DC2B4A;
+  --mat-form-field-error-text-color: #DC2B4A;
+
+  --mdc-outlined-text-field-outline-color: #006769;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -241,4 +254,51 @@ h4 {
 .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
   width: 20px;
   height: 20px;
+}
+
+// Label checkbox
+.mdc-form-field>label {
+  font-weight: 500;
+  color: #424242;
+}
+
+
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: #006769 !important;
+}
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
+  border-color: #006769 !important;
+}
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch {
+  border-color: #006769 !important;
+}
+
+.time-inputs .mat-mdc-input-element{
+  font-size: 40px !important;
+}
+
+.time-inputs .mat-form-field-hide-placeholder   mat-label{
+  font-size: 40px !important;
+}
+
+.time-inputs .ng-touched .mdc-floating-label  {
+  margin-top: 10px !important;
+}
+.time-inputs .ng-untouched .mdc-floating-label  {
+  margin-top: 10px !important;
+}
+
+// Hide arrows input number
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.days-checkboxes{
+  margin-bottom: 10px;
 }

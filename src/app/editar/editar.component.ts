@@ -28,6 +28,7 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    
   ]
 })
 export class EditarComponent implements OnInit {
@@ -42,7 +43,7 @@ export class EditarComponent implements OnInit {
       hour: ['07', Validators.required],
       minute: ['30', Validators.required],
       alarmName: ['Despertar', [Validators.required, Validators.minLength(3)]],
-      description: ['Alarma para despertar por la mañana', Validators.required],
+      description: ['Despertar a los peques y alistar sus útiles escolares y el lunch. Organizar todo para que tengan una mañana sin prisas y lleguen listos a la escuela.', Validators.required],
       timeFormat: ['AM', Validators.required],
       days: this.fb.group({
         lu: [true],
@@ -77,7 +78,8 @@ export class EditarComponent implements OnInit {
   
 
   goBack(): void {
-    // Lógica para regresar
+    this.router.navigate(['/listado']);
+
   }
 
   selectImage(): void {

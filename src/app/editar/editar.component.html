@@ -48,7 +48,7 @@
             <mat-error *ngIf="editAlarmForm.get('alarmName')?.hasError('minlength')">
               El nombre debe tener al menos 3 caracteres
             </mat-error>
-            <mat-hint>Llevar al jardín</mat-hint>
+            <mat-hint>Ingresa un nombre que puedas recordar</mat-hint>
           </mat-form-field>
         </div>
         
@@ -83,7 +83,7 @@
         <!-- Image Preview and File Input -->
         <mat-card class="image-card">
           <div class="image-container">
-            <img [src]="selectedImageUrl || '/images/bg-1.jpg'" alt="Selected image" class="image-preview" />
+            <img [src]="selectedImageUrl || '/images/despertar.jpg'" alt="Selected image" class="image-preview" />
             <button mat-raised-button class="custom-image-btn" (click)="selectImage()">
               <mat-icon>upload</mat-icon> Cambiar foto
             </button>
@@ -105,7 +105,7 @@
 
     <!-- Second Row - Buttons -->
     <div class="button-container">
-      <button mat-raised-button color="warn" (click)="goBack()">
+      <button mat-raised-button color="warn" (click)="goBack()" type="button">
         <mat-icon>arrow_back</mat-icon> Regresar
       </button>
       <button mat-raised-button color="primary" [disabled]="editAlarmForm.invalid">
