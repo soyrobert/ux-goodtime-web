@@ -1,26 +1,34 @@
 <div class="goodtime-container">
   <h1>Estadísticas</h1>
+
+
+<!--<div class="goodtime-containerv1"> -->
+<div class="container">
+  <div class="column">
+    <figure id="bar">
+      <figcaption>Cantidad de alarmas que se posponen</figcaption>
+    </figure>
+  </div>
+
+  <div class="second-column">
+    <figure id="line">
+      <figcaption>Horas pico de alarmas</figcaption>
+    </figure>
+  </div>
 </div>
 
-<div class="goodtime-containerv1">
-  <figure id="bar">
-    <figcaption>Cantidad de alarmas que se posponen</figcaption>
-  </figure>
+  <!-- Second Row - Buttons -->
+  <div class="button-container">
+    <div class="alarm-actions">
 
-  <figure id="line">
-    <figcaption>Horas pico de alarmas</figcaption>
-  </figure>
-</div>
-
-    <!-- Second Row - Buttons -->
-    <div class="button-container">
-      <div class="alarm-actions">
-        <button mat-raised-button class="back-button" (click)="back()">
-          <mat-icon>arrow_back</mat-icon> Volver
-        </button>
-        
-        <button mat-raised-button color="primary" (click)="reset()">
-          <mat-icon>check</mat-icon> Reiniciar estadísticas
-        </button>
-      </div>
+      <button mat-raised-button class="back-button" (click)="back()">
+        <mat-icon>arrow_back</mat-icon> Volver
+      </button>
+      
+      <button mat-raised-button color="primary" (click)="reset()">
+        <mat-icon>check</mat-icon> Reiniciar estadísticas
+      </button>
     </div>
+  </div>
+
+</div>
