@@ -1,9 +1,9 @@
 .share-alarm-container {
     background-color: #006769;
     color: white;
-    padding: 20px;
+    padding: 90px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 600px;
     margin: auto;
     text-align: center;
   }
@@ -21,8 +21,9 @@
   li {
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    padding: 20px 0;
     cursor: pointer;
+    border-bottom: 1px solid white;
   }
   
   mat-icon {
