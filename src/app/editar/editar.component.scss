@@ -1,0 +1,202 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+.minutes, .hours {
+    font-size: 1.5em;
+    width: 78px;
+    height: 86px;
+    border: 3px solid #297F80;
+    border-radius: 8px;
+  
+}
+
+.mdc-text-field{
+  border: 0;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 120px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 10px;
+  gap: 40px;
+}
+
+.time-inputs {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-container {
+  margin-right: 10px;
+}
+
+.file-input {
+  margin-top: 20px;
+}
+
+.days-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.am-pm-toggle {
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+// Boton subir audio
+
+.custom-sound-btn {
+  background-color: #00695f; 
+  color: white; 
+  border-radius: 50px; 
+  padding: 10px 30px; 
+  font-size: 16px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+}
+
+.custom-sound-btn mat-icon {
+  margin-right: 10px; 
+}
+
+.file-input {
+  margin-top: 20px;
+}
+
+.file-input mat-hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+
+// Fin Boton subir audio
+
+// Segunsa columna
+.second-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; 
+}
+
+.image-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative; 
+  border: 4px solid #008587;
+  min-height: 300px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image-preview {
+  width: 100%;
+  height: 300px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.custom-image-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #008587;
+  color: white;
+  // border-radius: 50px;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 256px;
+  height: 55px;
+  transition: opacity 0.3s ease;
+}
+
+
+.custom-image-btn mat-icon {
+  margin-right: 10px;
+}
+
+
+.custom-description textarea {
+  min-height: 196px;
+}
+
+// Fin segunda columna
+
+// Botones
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 5%;
+  button{
+    width: 166px;
+    height: 51px;
+    &:first-child{
+      background-color: #33a374;
+      color: #F2F2F2;
+      margin-right: 30px;
+    }
+  }
+ 
+}
+// Fin Botones

@@ -4,46 +4,55 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'dashboard',
+    redirectTo: 'crear',
   },
   {
-    path: 'welcome',
+    path: 'crear',
     loadComponent: () =>
-      import('./welcome/welcome.component').then(
-        (c) => c.WelcomeComponent
+      import('./crear/crear.component').then(
+        (c) => c.CrearComponent
       ),
-      title: 'Welcome'
+    title: 'Crear alarma'
   },
   {
-    path: 'address',
+    path: 'listado',
     loadComponent: () =>
-      import('./address-form/address-form.component').then(
-        (c) => c.AddressFormComponent
+      import('./listar/listar.component').then(
+        (c) => c.ListarComponent
       ),
-      title: 'Address'
+    title: 'Listado de alarmas'
   },
   {
-    path: 'table',
+    path: 'editar/:id',
     loadComponent: () =>
-      import('./table/table.component').then(
-        (c) => c.TableComponent
+      import('./editar/editar.component').then(
+        (c) => c.EditarComponent
       ),
-      title: 'Table'
+    title: 'Editar alarma'
   },
   {
-    path: 'tree',
+    path: 'historial',
     loadComponent: () =>
-      import('./tree/tree.component').then(
-        (c) => c.TreeComponent
+      import('./historial/table.component').then(
+        (c) => c.HistorialComponent
       ),
-      title: 'Tree'
+    title: 'Historial'
   },
   {
-    path: 'drag-drop',
+    path: 'estadisticas',
     loadComponent: () =>
-      import('./drag-drop/drag-drop.component').then(
-        (c) => c.DragDropComponent
+      import('./estadisticas/estadisticas.component').then(
+        (c) => c.EstadisticasComponent
       ),
-      title: 'Drag-Drop'
+    title: 'Estadisticas'
   },
+  {
+    path: 'compartir-alarma',
+    loadComponent: () =>
+      import('./share-alarm/share-alarm.component').then(
+        (c) => c.ShareAlarmComponent
+      ),
+    title: 'Compartir Alarma'
+  },
+
 ];

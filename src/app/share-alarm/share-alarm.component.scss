@@ -1,0 +1,62 @@
+.share-alarm-container {
+    background-color: #006769;
+    color: white;
+    padding: 90px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    cursor: pointer;
+    border-bottom: 1px solid white;
+  }
+  
+  li:last-child {
+    border-bottom: none; /* Eliminar la línea en el último elemento */
+  }
+
+  mat-icon {
+    margin-right: 15px;
+    font-size: 26px; /* Tamaño de los iconos más grande */
+  }
+  
+  .exit-button {
+    background-color: white;
+    color: #006769;
+    margin-top: 20px;
+    padding: 12px 24px; /* Tamaño más grande para el botón */
+    font-size: 18px; /* Texto más grande */
+    height: 48px;
+  }
+  
+
+  .mdc-snackbar{
+    width: 450px;
+    border-radius: 8px;
+    height: 150px;
+    background-color: red;
+    text-align: center;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }

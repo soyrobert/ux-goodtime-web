@@ -1,22 +1,25 @@
-
-.grid-container {
-  margin: 20px;
-}
-
-.dashboard-card {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-}
-
-// .more-button {
-//   position: absolute;
-//   top: 5px;
-//   right: 10px;
-// }
-
-.dashboard-card-content {
+.landing-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  background-image: url('/images/background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn-primary {
+  background-color: #008587;
+  color: #F2F2F2 !important;
+  min-width: 240px;
+  min-height: 57px;
+  padding: 10px 24px 10px 16px;
+  gap: 8px;
+  span, .mdc-button__label{
+    color: #F2F2F2 !important;
+    font-size: 14px;
+  }
 }

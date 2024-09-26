@@ -3,33 +3,34 @@
 @use "./typography" as typography;
 @use "../m3-theme";
 
+
 @include mat.core();
 
-$angular-material-3-light-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    density: (
-      scale: 0,
-    ),
-  )
-);
+// $angular-material-3-light-theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: light,
+//       primary: mat.$azure-palette,
+//       tertiary: mat.$blue-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
 
-$angular-material-3-dark-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: dark,
-      primary: mat.$magenta-palette,
-      tertiary: mat.$violet-palette,
-    ),
-    density: (
-      scale: 0,
-    ),
-  )
-);
+// $angular-material-3-dark-theme: mat.define-theme(
+//   (
+//     color: (
+//       theme-type: dark,
+//       primary: mat.$magenta-palette,
+//       tertiary: mat.$violet-palette,
+//     ),
+//     density: (
+//       scale: 0,
+//     ),
+//   )
+// );
 
 // Light theme
 // Un comment below to use theme created by ng add @angular-material
@@ -72,7 +73,15 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  p{
+    font-size: 14px;
+  }
 }
+
+$primary-50: #006769;
+$primary-30: #014344;
+$secondary-60: #55B88A;
+$neutral-90: #F2F2F2;
 
 
 h1 {
@@ -103,7 +112,198 @@ h4 {
   font-weight: map-get(typography.$title-large, weight);
 }
 
-// button.mat-raised-button {
-//   background-color: mat.get-color-from-palette($_palettes, 50); // Aplica el color primary 50
-//   color: mat.get-color-from-palette($_palettes, contrast, 50); // Asegura que el color del texto tenga contraste adecuado
-// }
+.goodtime-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0% 5rem;
+  h1{
+    color: #014344;  
+    background-color: $neutral-90;
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin-bottom: 35px;
+  }
+}
+.goodtime-crear, .goodtime-editar{
+  p{
+    margin-top: -5px;
+  }
+}
+
+// Inputs
+.time-inputs{
+  .mat-mdc-text-field-wrapper{
+    width: 81px;
+    height: 86px;
+    // border: 3px solid $primary-50;
+    // border-radius: 8px;
+  }
+}
+.name, .description{
+  width: 100%;
+  .mat-mdc-text-field-wrapper{
+    width: 100%;
+    // border: 3px solid $primary-50;
+    // border-radius: 8px;
+  }
+}
+.time-apm{
+  display: flex;
+}
+
+.mdc-notched-outline--notched mat-label{
+  background-color: #55B88A;
+  border-radius: 8px;
+  color: #014344;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0px 4px;
+  align-items: center;
+}
+
+.mdc-snackbar{
+  width: 450px;
+  border-radius: 8px;
+  height: 150px;
+  background-color: $primary-50;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  .mdc-snackbar__label{
+    color: $neutral-90 !important;
+    font-size: 20px !important;
+    font-weight: 500 !important;
+  }
+}
+.mat-mdc-snack-bar-container{
+  -webkit-box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+  -moz-box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+  box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  box-shadow: none !important;
+}
+.mat-mdc-list-item-unscoped-content{
+  display: flex;
+  justify-content: flex-start;
+  mat-icon{
+      margin-right: 10px;
+  }
+}
+
+// Override Theme 
+
+:root {
+  --mdc-text-button-label-text-size: 0.975rem;
+  // Background color item sidenav
+  --mat-list-active-indicator-color: #006769;
+  // Text color item sidenav
+  --mdc-list-list-item-label-text-color: #F2F2F2;
+
+  // Text color button
+  --mdc-protected-button-label-text-color: #F2F2F2;
+
+  // Background color button
+  --mdc-protected-button-container-color: #006769;
+
+  // Checkbox 
+  --mdc-checkbox-selected-focus-icon-color: #006769;
+  --mdc-checkbox-selected-hover-icon-color: #006769;
+  --mdc-checkbox-selected-icon-color: #006769;
+  --mdc-checkbox-selected-pressed-icon-color: #006769;
+  --mdc-checkbox-selected-focus-state-layer-color: #006769;
+  --mdc-checkbox-selected-hover-state-layer-color: #006769;
+  --mdc-checkbox-unselected-pressed-state-layer-color: #006769;
+
+  --mdc-snackbar-container-color: #006769;
+
+  // Altura item de navegacion
+  --mdc-list-list-item-one-line-container-height: 58px;
+
+  // Color radio
+  --mdc-radio-unselected-icon-color: #006769;
+
+  // Textos descripcion inputs
+  --mat-form-field-subscript-text-weight: 500;
+
+  // Border inputs
+  --mdc-outlined-text-field-outline-width: 3px;
+  --mdc-outlined-text-field-error-outline-color: #DC2B4A;
+  --mat-form-field-error-text-color: #DC2B4A;
+
+  --mdc-outlined-text-field-outline-color: #006769;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root .mat-accent.mat-mdc-checkbox {
+    --mdc-checkbox-selected-focus-icon-color: #006769;
+    --mdc-checkbox-selected-hover-icon-color: #006769;
+    --mdc-checkbox-selected-icon-color: #006769;
+    --mdc-checkbox-selected-pressed-icon-color: #006769;
+    --mdc-checkbox-selected-focus-state-layer-color: #006769;
+    --mdc-checkbox-selected-hover-state-layer-color: #006769;
+    --mdc-checkbox-unselected-pressed-state-layer-color: #006769;
+    --mdc-checkbox-unselected-icon-color: #006769;
+  }
+}
+
+.mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+  width: 20px;
+  height: 20px;
+}
+
+// Label checkbox
+.mdc-form-field>label {
+  font-weight: 500;
+  color: #424242;
+}
+
+
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  border-color: #006769 !important;
+}
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading {
+  border-color: #006769 !important;
+}
+.ng-valid .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch {
+  border-color: #006769 !important;
+}
+
+.time-inputs .mat-mdc-input-element{
+  font-size: 40px !important;
+}
+
+.time-inputs .mat-form-field-hide-placeholder   mat-label{
+  font-size: 40px !important;
+}
+
+.time-inputs .ng-touched .mdc-floating-label  {
+  margin-top: 10px !important;
+}
+.time-inputs .ng-untouched .mdc-floating-label  {
+  margin-top: 10px !important;
+}
+
+// Hide arrows input number
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.days-checkboxes{
+  margin-bottom: 10px;
+}

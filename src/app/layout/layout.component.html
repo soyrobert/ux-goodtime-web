@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav
     #drawer
-    class="sidenav"
+    class="sidenav nav-goodtime"
     fixedInViewport
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -9,33 +9,22 @@
   >
     <mat-toolbar>GoodTime</mat-toolbar>
     <mat-nav-list>
-      @for (item of rootRoutes; track $index) {
-      <a
-        mat-list-item
-        [routerLink]="item.path"
-        #link="routerLinkActive"
-        routerLinkActive
-        [activated]="link.isActive"
-      >
-        {{ item.title }}
+      <!-- Enlaces estáticos con iconos -->
+      <a mat-list-item routerLink="/crear" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>add_circle_outline</mat-icon> Crear alarma
       </a>
-      }
+      <a mat-list-item routerLink="/listado" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>list</mat-icon> Listado de alarmas
+      </a>
+      <a mat-list-item routerLink="/historial" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>history</mat-icon> Historial
+      </a>
+      <a mat-list-item routerLink="/estadisticas" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">
+        <mat-icon>folder</mat-icon> Estadísticas
+      </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      @if (isHandset$ | async) {
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-      >
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      }
-      <span>angular-material-3</span>
-    </mat-toolbar>
     <div class="sidenav-scroll-wrapper">
       <div class="sidenav-content">
         <ng-content></ng-content>

@@ -1,0 +1,33 @@
+<div class="goodtime-container goodtime-listado">
+  <h1>{{ title }}</h1>
+  <div class="alarms-list">
+    <mat-card class="alarm-card" *ngFor="let alarm of alarms">
+      <div class="alarm-content">
+        <img [src]="alarm.image" alt="Alarm image" class="alarm-image" />
+        <div class="alarm-info">
+          <h3>{{ alarm.title }}</h3>
+          <p>{{ alarm.time }}</p>
+        </div>
+        <div class="alarm-actions">
+          <button mat-icon-button class="delete-button" (click)="deleteAlarm(alarm)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+    <!-- Second Row - Buttons -->
+    <div class="button-container">
+      <div class="alarm-actions">
+        <button mat-raised-button class="back-button" (click)="back()">
+          <mat-icon>arrow_back</mat-icon> Volver
+        </button>
+        
+        <button mat-raised-button color="primary" (click)="deleteHistory()">
+          <mat-icon>check</mat-icon> Borrar historial
+        </button>
+      </div>
+    </div>
+
+</div>
