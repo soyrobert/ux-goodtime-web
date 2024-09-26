@@ -12,30 +12,30 @@ Este proyecto fue generado con Angular CLI versión 18.0.0-next.4.
 Angular requiere Node.js y npm para funcionar. npm (Node Package Manager) se instala automáticamente con Node.js.
 
 * Descargar Node.js:
-    Ve a la página oficial de Node.js.
-    Descarga la versión LTS (Long Term Support) recomendada.
-    Sigue las instrucciones para instalarlo en tu sistema operativo.
+    Vaya a la página oficial de Node.js.
+    Descargue la versión LTS (Long Term Support) recomendada.
+    Siga las instrucciones para instalarlo en su sistema operativo.
 
 * Verificar la instalación:
-    Abre una terminal (CMD, PowerShell, Terminal en Mac/Linux).
-    Ejecuta los siguientes comandos para asegurarte de que Node.js y npm están instalados correctamente:
+    Abra una terminal (CMD, PowerShell, Terminal en Mac/Linux).
+    Ejecute los siguientes comandos para asegurarse de que Node.js y npm están instalados correctamente:
 
     ```bash
     node -v
     npm -v
     ```
-    Deberías ver las versiones instaladas de ambos programas. Si ves números, significa que la instalación fue exitosa.
+    Debería ver las versiones instaladas de ambos programas. Aplicacion probada en la versión v20.12.2 de node
 
 ### Paso 2: Instalar Angular CLI
-La CLI (Command Line Interface) de Angular te ayuda a crear proyectos, generar código y ejecutar aplicaciones Angular.
+La CLI (Command Line Interface) de Angular le ayuda a crear proyectos, generar código y ejecutar aplicaciones Angular.
 * Instalar Angular CLI:
-    En la terminal, ejecuta el siguiente comando para instalar Angular CLI globalmente:
+    En la terminal, ejecute el siguiente comando para instalar Angular CLI globalmente:
 
     ```bash
     npm install -g @angular/cli
     ```
 * Verificar la instalación:
-    Una vez instalada, verifica la versión de Angular CLI con este comando:
+    Una vez instalada, verifique la versión de Angular CLI con este comando:
     ```bash
     ng version
     ```
@@ -44,23 +44,23 @@ La CLI (Command Line Interface) de Angular te ayuda a crear proyectos, generar c
 Git es necesario para gestionar el control de versiones de tu proyecto.
 
 * Descargar Git:
-    Ve a la página oficial de Git.
-    Descarga e instala la versión más reciente.
+    Vaya a la página oficial de Git.
+    Descargue e instala la versión más reciente.
 * Verificar la instalación:
-    En la terminal, ejecuta el siguiente comando para verificar que Git se instaló correctamente:
+    En la terminal, ejecute el siguiente comando para verificar que Git se instaló correctamente:
     ```bash
     git --version
     ```
 
-Deberías ver la versión de Git instalada.
+Debería ver la versión de Git instalada.
 
 ## Ejecutar esta web app
 
 ### Paso 1: Abrir su IDE favorito
 Recomendado: Visual Studio Code o WebStorm
 
-### Paso 2: ejecutar
-Para iniciar el servidor de desarrollo y ver tu aplicación Angular en el navegador, ejecuta:
+### Paso 2: Ejecutar
+Para iniciar el servidor de desarrollo y ver tu aplicación Angular en el navegador, ejecute:
 
 
 ```bash
