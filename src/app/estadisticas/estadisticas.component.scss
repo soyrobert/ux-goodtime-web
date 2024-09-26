@@ -132,8 +132,15 @@ figcaption {
   }
 
   button.back-button {
+    background-color: #006769 !important;
+    color: white !important;
+    height: 48px;
+  }
+
+  button.reset-button {
     background-color: #55B88A !important;
     color: white !important;
+    height: 48px;
   }
 
 }
