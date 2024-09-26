@@ -26,8 +26,13 @@
     border-bottom: 1px solid white;
   }
   
+  li:last-child {
+    border-bottom: none; /* Eliminar la línea en el último elemento */
+  }
+
   mat-icon {
     margin-right: 15px;
+    font-size: 26px; /* Tamaño de los iconos más grande */
   }
   
   .exit-button {
