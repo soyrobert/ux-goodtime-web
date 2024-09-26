@@ -183,6 +183,11 @@ h4 {
     font-weight: 500 !important;
   }
 }
+.mat-mdc-snack-bar-container{
+  -webkit-box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+  -moz-box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+  box-shadow: 6px 10px 109px -16px rgba(1,45,46,1);
+}
 
 .mat-mdc-snack-bar-container .mdc-snackbar__surface {
   box-shadow: none !important;
